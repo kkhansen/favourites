@@ -1,0 +1,65 @@
+﻿#favs {
+    font-family: 'Source Sans Pro', sans-serif;
+    max-width:300px;
+    background-color:white;
+    color:white;
+    border:1px solid #00a66e;
+    background-color:#FFFFFF;
+    overflow:hidden;
+}
+#favs .header {
+    display:flex;
+    align-items:center;
+    padding:0 5px;
+    height:40px;   
+}
+#favs .headertxt {
+    width:100%;
+}
+#favs .urls {
+    display:flex;
+    align-items:center;
+    width:100%;
+
+}
+#favs ul {
+    list-style-type: none;
+    color:#424242;
+    padding:0;
+    margin:0;
+    width:100%;
+}
+#favs li {
+    border-bottom:1px solid #00a66e;
+}
+#favs li:last-child {
+    border-bottom:0;
+}
+#favs ul li div {
+    overflow:hidden;
+    white-space:nowrap;
+    margin:15px 5px;
+}
+#favs ul li div a {
+    text-decoration:none;
+    cursor:pointer;
+    color: green;
+}
+
+/* mouse over link */
+#favs ul li div a:hover {
+    color:#424242;
+    padding-left:2px;
+}
+
+.fright {
+    padding:0 5px;
+    float:right;
+    cursor:pointer;
+}
+.remove {
+    margin:0;
+    float:right;
+    padding:0 5px;
+    cursor:pointer;
+}

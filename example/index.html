@@ -1,0 +1,20 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>favourites</title>
+	<meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width">
+    <link rel="shortcut icon" src="favicon.ico" />
+    <link href="src/favourites.css" rel="stylesheet" />
+</head>
+<body data-ng-app="testApp" data-ng-controller="testAppCtrl">
+    
+    <div>
+        <p>links on model : {{links}}</p>
+        <favourites data-ng-model="links"></favourites>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.7/angular.js"></script>
+    <script src="testApp.js"></script>
+    <script src="src/favourites.js"></script>
+</body>
+</html>
