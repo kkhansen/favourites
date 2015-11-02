@@ -1,1 +1,1 @@
-{"name":"Favourites","tagline":"testproject, favourites","body":"favourites directive, add url - favourites\r\n","google":"","note":"Don't delete this file! It's used internally to help with page regeneration."}
+{"name":"Favourites","tagline":"testproject, favourites","body":"module with a directive that makes you store favourite urls in localstorage\r\n","google":"","note":"Don't delete this file! It's used internally to help with page regeneration."}
