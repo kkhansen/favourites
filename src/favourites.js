@@ -3,9 +3,9 @@
 
     /**
      * @ngdoc overview
-     * @name app.cms:app
+     * @name favourites
      * @description
-     * the main module of the cms application
+     * module with a directive that makes you store favourite urls in localstorage
      */
     angular.module('favourites', [])
     .controller('favCtrl', ['$log', '$scope', function ($log, $scope) {
@@ -19,9 +19,6 @@
         return {
             restrict: 'EA',
             require: "ngModel",
-            //scope: {
-            //    model: '=ngModel'
-            //},
             template: '<div id="favs">'+
                         '<div class="header" data-ng-style="hbgc" data-ng-show="!add">' +
                             '<div class="headertxt" >{{header}}</div>' +
@@ -74,6 +71,7 @@
                     }
                 };
 
+                //---------------------------------------------------------------
                 // clear favourites
                 scope.clearfav = function () {
                     scope.favUrls = $localstorage.getObject('favsorg');
@@ -82,6 +80,8 @@
                     // update model
                     updateModel();
                 }
+
+                //---------------------------------------------------------------
                 // add new favourite
                 scope.addfav = function () {
                     // create new urlobj
@@ -99,6 +99,9 @@
                     // update model
                     updateModel();
                 }
+
+                //---------------------------------------------------------------
+                // remove favourite
                 scope.removefav = function (index) {
 
                     scope.favUrls.splice(index, 1);
@@ -109,11 +112,15 @@
                     // update model
                     updateModel();
                 }
-                // don't add
+
+                //---------------------------------------------------------------
+                // don't add favourite
                 scope.addnot = function() {
                     scope.add = false;
                     scope.addwww = '';
                 }
+
+                //---------------------------------------------------------------
                 // update model
                 function updateModel() {
                     var a = [];
@@ -122,6 +129,8 @@
                     })
                     ngModel.$setViewValue(a);
                 }
+
+                //---------------------------------------------------------------
                 // converts urls to objects 
                 function UrlsToObjs(value) {
                     var urls = [];
@@ -134,12 +143,8 @@
                     return urls;
                 }
 
-                //console.log(scope);
-                //attr.$observe('ngModel', function (value) {
-                //    console.log(value);
-                //    scope.val = value;
-                //    //TweenMax.from(elem, 0.9, { y: '20', alpha: 0, delay: scope.$index / 10, ease: Quad.easeOut })
-                //})
+                //---------------------------------------------------------------
+                // extract domain urls
                 function extractDomain(url) {
                     var domain;
                     //find & remove protocol (http, ftp, etc.) and get domain
