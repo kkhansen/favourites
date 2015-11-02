@@ -13,7 +13,7 @@
         favouritesProvider.setBgColor('#00a66e');
     })
     .controller('testAppCtrl', ['$log', '$scope', function ($log, $scope) {
-        $scope.link = ['https://easir.com/', 'https://docs.angularjs.org/api', 'https://www.oculus.com/en-us/rift/#oculus-touch'];
+        $scope.links = ['https://easir.com/', 'https://docs.angularjs.org/api', 'https://www.oculus.com/en-us/rift/#oculus-touch'];
     }]);
 
 })();
